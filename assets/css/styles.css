@@ -97,48 +97,65 @@ header .body {
   align-items: center;
 }
 
-header .nav {
+header .nav-bar {
   display: flex;
 }
 
-.nav a {
+.nav-bar a {
+  display: inline-block;
   padding: 8px 20px;
-  font-weight: 400;
   font-size: 1.6rem;
   color: #2f3a3b;
+  text-align: center;
 }
 
-.nav a:hover {
+.nav-bar a:hover {
   text-decoration: underline;
   text-decoration-color: var(--primary-color);
   font-weight: 600;
   font-size: 1.6rem;
-  color: #2f3a3b;
+  /* text-shadow: 1px 0 0 currentColor; */
 }
 
-.header-cta {
+.nav-bar a::before {
+  content: attr(title);
+  display: block;
+  font-weight: 600;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+header.header-cta {
   display: flex;
 }
 
 .header-cta a {
+  display: inline-block;
   padding: 14px 24px;
   font-size: 1.6rem;
   color: #494949;
 }
 
-.header-cta .active {
-  border: 1px solid var(--primary-color);
+.header-cta a:hover {
+  /* border: 1px solid var(--primary-color); */
   border-radius: 6px;
   font-weight: 600;
-  font-size: 1.6rem;
   color: var(--primary-color);
-}
-
-.header-cta .active:hover {
   background: var(--primary-color);
   color: #fff;
-  transition: 0.4s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
+
+.header-cta a::before {
+  content: attr(title);
+  display: block;
+  font-weight: 600;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
 /* hero */
 .hero {
   padding: 38px 0 79px;
@@ -193,6 +210,10 @@ header .nav {
   border-radius: 50%;
   background: #ffffff;
   box-shadow: 0px 22px 50px rgba(0, 0, 0, 0.1);
+}
+
+.hero-cta .icon:hover {
+  border: 1px solid var(--primary-color);
 }
 
 .hero-right {
@@ -637,7 +658,7 @@ footer {
 }
 
 footer a:hover {
-  text-decoration: underline;
+  opacity: 0.9;
 }
 
 footer .row {
